@@ -1,5 +1,5 @@
 {% set name = "pbxproj" %}
-{% set version = "3.3.0" %}
+{% set version = "3.4.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 23ea590b006316aa5bc11208088e6df7138bbe1127bc9d570baa15bc5bef6ed8
+  sha256: fec5db4dcf6a160012ef349e6affbe9e5554fda7077a4725508ca5f012aa94d6
 
 build:
   number: 0
@@ -17,7 +17,7 @@ build:
     - pbxproj-file = pbxproj.pbxcli.pbxproj_file:main
     - pbxproj-flag = pbxproj.pbxcli.pbxproj_flag:main
     - pbxproj-folder = pbxproj.pbxcli.pbxproj_folder:main
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -45,8 +45,8 @@ test:
 
 about:
   home: https://github.com/kronenthaler/mod-pbxproj
-  license: MIT 
-  summary: 'XCode Project manipulation library for Python'
+  license: MIT
+  summary: XCode Project manipulation library for Python
   license_file: license.txt
   description: |
     This module can read, modify, and write a .pbxproj file from an Xcode 4+ projects. 
