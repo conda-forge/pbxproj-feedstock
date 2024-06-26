@@ -1,5 +1,5 @@
 {% set name = "pbxproj" %}
-{% set version = "4.1.0" %}
+{% set version = "4.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b25498380e003827ded9ec50c0aa32a99baf18aa14dadc05e233a9616e11f999
+  sha256: 00a0573963eefad1f0ee04d6a09cb8748d832a6c0ce357b97b2fffd44396a849
 
 build:
   number: 0
