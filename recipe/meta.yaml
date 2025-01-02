@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: fc3ee3069730a2aba562629ec5942a2ce7abc203b035b7ef672016d92339ecfd
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - pbxproj = pbxproj.__main__:main
@@ -24,11 +24,11 @@ requirements:
     - coverage
     - nose
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - docopt
     - openstep-parser >=1.5.1
-    - python >=3.6
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -42,6 +42,7 @@ test:
     - pbxproj-folder --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/kronenthaler/mod-pbxproj
